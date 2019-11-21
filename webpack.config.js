@@ -163,8 +163,9 @@ const buildConfiguration = () => {
 
     // Enable CSS HMR instead of loading CSS pre-built from disk
     if (argv.css) {
+      config.entry.main.push('./client/styles/index.postcss');
       config.module.rules.push({
-        test: /\.scss?$/,
+        test: /\.postcss?$/,
         use: [
           { loader: 'style-loader', options: { injectType: 'styleTag' } },
           {
@@ -177,19 +178,6 @@ const buildConfiguration = () => {
             },
           },
           'postcss-loader',
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: false,
-              webpackImporter: false,
-              sassOptions: {
-                indentedSyntax: false,
-                sourceComments: false,
-                outputStyle: 'expanded',
-                precision: 6,
-              },
-            },
-          },
         ],
       });
     }

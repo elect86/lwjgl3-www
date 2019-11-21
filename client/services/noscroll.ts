@@ -17,7 +17,7 @@ export const on = (): void => {
   stackCnt += 1;
   if (stackCnt === 1) {
     const body = document.body;
-    const header: HTMLElement | null = document.querySelector('header.site-header');
+    const header: HTMLElement | null = document.querySelector('header');
     if (body.scrollHeight > window.innerHeight) {
       let size = getScrollbarSize();
       if (size > 0) {
@@ -36,7 +36,7 @@ export const off = (): void => {
   stackCnt -= 1;
   if (stackCnt === 0) {
     const body = document.body;
-    const header: HTMLElement | null = document.querySelector('header.site-header');
+    const header: HTMLElement | null = document.querySelector('header');
 
     if (scrollbarSize > 0) {
       body.style.paddingRight = '0';

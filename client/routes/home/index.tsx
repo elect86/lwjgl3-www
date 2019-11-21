@@ -40,13 +40,13 @@ const cssMainFeatures = css`
 const StaticContent = () => {
   return (
     <>
-      <section className="container py-5">
-        <h1 className="text-center">
+      <section className="container mx-auto py-12">
+        <h1 className="text-center text-3xl font-light text-gray-800">
           What is LW
           <b>JGL</b> 3?
         </h1>
-        <div className="row justify-content-center">
-          <div className="col-md-10">
+        <div className="flex justify-center">
+          <div className="xl:w-4/5">
             <p>
               LW
               <b>JGL</b> is a Java library that enables cross-platform access to popular native APIs useful in the

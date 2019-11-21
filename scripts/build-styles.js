@@ -1,20 +1,12 @@
 'use strict';
 const path = require('path');
-const fs = require('fs').promises;
-const sass = require('node-sass');
+const fsa = require('fs').promises;
 const postcss = require('postcss');
 const postcssConfig = require('../postcss.config.js');
 const { argv } = require('yargs');
 
-const renderSass = require('util').promisify(sass.render);
-
 /*
-  1. Render Sass to CSS
-  2. Apply Autoprefixer with PostCSS
-  3. Minimize CSS
-  4. Write result to disk
-
-  Entry point: /client/styles/layout.scss
+  Entry point: /client/styles/index.css
   Output: /public/css/core.css
 
   CLI flags:
@@ -22,26 +14,16 @@ const renderSass = require('util').promisify(sass.render);
 */
 
 const process = async () => {
-  const sourcePath = path.resolve(__dirname, '../client/styles/layout.scss');
+  const sourcePath = path.resolve(__dirname, '../client/styles/index.css');
   const targetPath = path.resolve(__dirname, '../public/css/core.css');
   const sourceMapPath = path.resolve(__dirname, '../public/css/core.css.map');
   const SOURCEMAP = argv.sourcemap === true;
 
-  console.log('Rendering Sass to CSS');
+  console.log('Processing CSS');
 
-  const render = await renderSass({
-    file: sourcePath,
-    outputStyle: 'expanded',
-    precision: 6,
-    sourceComments: false,
-    sourceMap: SOURCEMAP,
-    sourceMapEmbed: SOURCEMAP,
-    sourceMapRoot: '/',
-  });
+  const source = await fsa.readFile(sourcePath);
 
-  console.log('Applying Autoprefixer & Minifying CSS');
-
-  const result = await postcss(postcssConfig.plugins).process(render.css, {
+  const result = await postcss(postcssConfig.plugins).process(source, {
     from: sourcePath,
     to: targetPath,
     map: SOURCEMAP
@@ -51,9 +33,9 @@ const process = async () => {
       : false,
   });
 
-  await fs.writeFile(targetPath, result.css);
+  await fsa.writeFile(targetPath, result.css);
   if (result.map) {
-    await fs.writeFile(sourceMapPath, result.map);
+    await fsa.writeFile(sourceMapPath, result.map);
   }
 };
 
