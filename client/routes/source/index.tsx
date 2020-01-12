@@ -1,8 +1,8 @@
 import React from 'react';
 import { PageView } from '~/components/routes/PageView';
-import { RouteComponentProps, WindowLocation } from '@reach/router';
 import { Icon, Github } from '~/components/icons';
 import { BuildBadge } from './BuildBadge';
+import type { RouteComponentProps, WindowLocation } from '@reach/router';
 
 const SourceRoute = (props: RouteComponentProps) => (
   <PageView

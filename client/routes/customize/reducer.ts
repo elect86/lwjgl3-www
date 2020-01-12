@@ -1,19 +1,18 @@
 import produce from 'immer';
 import React from 'react';
-import { Action, ActionCreator } from './actions';
+import { Action } from './actions';
 import { config, getDefaultPlatform, OSGiVersionMax } from './config';
-import {
+import { BuildType, Mode, NATIVE_ALL, Preset } from './types';
+
+import type { ActionCreator } from './actions';
+import type {
   Addon,
   Binding,
   BindingDefinition,
   BindingMapSelection,
   BuildStore,
   BuildStoreSnapshot,
-  BuildType,
-  Mode,
-  NATIVE_ALL,
-  Preset,
-  Version,
+  Version
 } from './types';
 
 // Reducer

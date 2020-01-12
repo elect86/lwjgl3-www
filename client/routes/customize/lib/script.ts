@@ -1,19 +1,18 @@
-import { State } from '../BuildScript';
-import {
-  Binding,
-  BindingDefinition,
-  BindingMapUnsafe,
-  BuildType,
-  Mode,
-  ModeDefinition,
-  Native,
-  NATIVE_ALL,
-  PlatformSelection,
-  Version,
-} from '../types';
+import { BuildType, Mode, NATIVE_ALL } from '../types';
 import { generateGradle } from './gradle';
 import { generateIvy } from './ivy';
 import { generateMaven } from './maven';
+
+import type { State } from '../BuildScript';
+import type {
+  Binding,
+  BindingMapUnsafe,
+  BindingDefinition,
+  ModeDefinition,
+  Native,
+  PlatformSelection,
+  Version,
+} from '../types';
 
 export function copyToClipboard(ref: React.RefObject<HTMLElement>) {
   const selection = window.getSelection();

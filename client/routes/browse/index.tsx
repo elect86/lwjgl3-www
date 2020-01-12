@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { PageView } from '~/components/routes/PageView';
-import { RouteComponentProps, WindowLocation } from '@reach/router';
 import { Browser } from './components/Browser';
 import { PathResource } from './PathResource';
+
+import type { RouteComponentProps, WindowLocation } from '@reach/router';
 
 interface BrowseRouteProps {
   '*': string;

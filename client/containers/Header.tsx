@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { css } from '@emotion/css';
-import { Link, RouteComponentProps } from '@reach/router';
+import { Link } from '@reach/router';
 import { useBreakpoint } from '~/components/Breakpoint';
 import { SUPPORTS_PASSIVE_EVENTS } from '~/services/supports';
 import { IS_IOS } from '~/services/ua';
@@ -10,6 +10,8 @@ import { Icon, CloudDownload } from '~/components/icons';
 import { useServiceWorker } from '~/hooks/useServiceWorker';
 import { MainMenu } from './MainMenu';
 import { Sidebar } from './Sidebar';
+
+import type { RouteComponentProps } from '@reach/router';
 
 const HEADER_CLASSNAME = 'site-header';
 const cssIsHome = css`

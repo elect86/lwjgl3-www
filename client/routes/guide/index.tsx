@@ -1,7 +1,8 @@
 import React, { lazy, Suspense } from 'react';
 import { PageView } from '~/components/routes/PageView';
-import { Link, RouteComponentProps, WindowLocation } from '@reach/router';
+import { Link } from '@reach/router';
 import { HashLinkTarget } from '~/components/HashLinkTarget';
+import type { RouteComponentProps, WindowLocation } from '@reach/router';
 
 const Sample = lazy(() => import(/* webpackChunkName: "route-guide$sample" */ './Sample'));
 

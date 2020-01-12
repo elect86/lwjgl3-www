@@ -1,12 +1,14 @@
 import React, { useMemo } from 'react';
 import { useMemoSlice } from './Store';
-import { Binding, BindingDefinition, Native, NATIVE_ALL, BuildStore } from './types';
+import { NATIVE_ALL } from './types';
 import { toggleArtifact } from './actions';
 
 // UI
 import { Checkbox } from '~/components/Checkbox';
 import { getPlatformIcon } from './getPlatformIcon';
 import { cx } from '@emotion/css';
+
+import type { Binding, BindingDefinition, Native, BuildStore } from './types';
 
 const getPlatformIcons = (platforms: Array<Native>) => (
   <p>

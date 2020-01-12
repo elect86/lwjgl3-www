@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from '@reach/router';
-import { RouteComponentProps } from '@reach/router';
+import type { RouteComponentProps } from '@reach/router';
 
 function shouldRenderFooter({ location }: RouteComponentProps) {
   return location !== undefined && location.pathname !== '/customize' && !location.pathname.startsWith('/browse');

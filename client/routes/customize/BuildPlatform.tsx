@@ -2,9 +2,11 @@ import React, { useMemo } from 'react';
 import { Checkbox } from '~/components/Checkbox';
 import { useMemoSlice } from './Store';
 import { togglePlatform } from './actions';
-import { BuildStore, Native } from './types';
+import { Native } from './types';
 import { getPlatformIcon } from './getPlatformIcon';
 import { versionNum } from './reducer';
+
+import type { BuildStore } from './types';
 
 const getSlice = ({ natives, platform, artifacts }: BuildStore) => ({
   platforms: natives.allIds,

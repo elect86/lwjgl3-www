@@ -1,7 +1,9 @@
-import { State } from '../BuildScript';
-import { Addon, BindingDefinition, BuildType, Language, PlatformSelection } from '../types';
+import { BuildType, Language } from '../types';
 import { generateDependencies, getVersion, isNativeApplicableToAllPlatforms } from './script';
 import { versionNum } from '../reducer';
+
+import type { State } from '../BuildScript';
+import type { Addon, BindingDefinition, PlatformSelection } from '../types';
 
 export function generateGradle({
   build,
@@ -76,7 +78,7 @@ export function generateGradle({
           windowsArches == 1
             ? `"natives-windows${platform.windows ? '' : '-x86'}"`
             : `System.getProperty("os.arch").contains("64") ? "natives-windows" : "natives-windows-x86"`
-        } 
+        }
 \t\tbreak`;
       }
       script += `

@@ -1,12 +1,12 @@
 import JSZip from 'jszip';
 import { HTTP_OK } from '~/services/http_status_codes';
-import {
+import { BuildType, Native } from '../types';
+
+import type {
   Binding,
   BindingDefinition,
   BindingMapSelection,
   BuildStore,
-  BuildType,
-  Native,
   PlatformSelection,
 } from '../types';
 

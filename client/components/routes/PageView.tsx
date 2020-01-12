@@ -4,7 +4,7 @@ import { PageError } from './PageError';
 // import { trackView } from '~/services/ga';
 import { useDocumentTitle } from '~/hooks/useDocumentTitle';
 import { useMetaDescription } from '~/hooks/useMetaDescription';
-import { WindowLocation } from '@reach/router';
+import type { WindowLocation } from '@reach/router';
 
 // Store scroll position when leaving a route, restore if we return back to it
 interface ScrollPosition {

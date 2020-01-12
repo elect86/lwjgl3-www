@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDocumentTitle } from '~/hooks/useDocumentTitle';
-import { RouteComponentProps } from '@reach/router';
+import type { RouteComponentProps } from '@reach/router';
 
 export function Miss404(props: RouteComponentProps) {
   useDocumentTitle('Page not Found');

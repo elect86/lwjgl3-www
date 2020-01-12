@@ -1,7 +1,9 @@
-import { State } from '../BuildScript';
-import { Addon, BuildType, Native } from '../types';
+import { BuildType, Native } from '../types';
 import { generateDependencies, getArtifactName, getVersion, isNativeApplicableToAllPlatforms } from './script';
 import { versionNum } from '../reducer';
+
+import type { State } from '../BuildScript';
+import type { Addon } from '../types';
 
 export function generateMaven({
   build,

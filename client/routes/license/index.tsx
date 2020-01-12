@@ -1,6 +1,6 @@
 import React from 'react';
 import { PageView } from '~/components/routes/PageView';
-import { RouteComponentProps, WindowLocation } from '@reach/router';
+import type { RouteComponentProps, WindowLocation } from '@reach/router';
 
 const LicenseRoute = (props: RouteComponentProps) => (
   <PageView location={props.location as WindowLocation} title="License" description="LWJGL is licensed under BSD">

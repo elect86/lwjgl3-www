@@ -1,6 +1,5 @@
-import { BuildStore, BuildType, Language, Mode } from './types';
+import { BuildType, Mode } from './types';
 import { checkOSGiVersion } from './reducer';
-import { RadioOptions } from './ControlledRadio';
 import {
   selectLanguage,
   selectMode,
@@ -14,6 +13,9 @@ import {
   toggleOSGi,
   toggleSource,
 } from './actions';
+
+import type { BuildStore, Language } from './types';
+import type { RadioOptions } from './ControlledRadio';
 
 const getMode = (state: BuildStore) => state.mode;
 const getPreset = (state: BuildStore) => state.preset;

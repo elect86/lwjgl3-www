@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, LinkProps, LinkGetProps } from '@reach/router';
+import { Link } from '@reach/router';
+import type { LinkProps, LinkGetProps } from '@reach/router';
 
 interface Props {
   onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
