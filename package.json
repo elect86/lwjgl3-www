@@ -61,7 +61,7 @@
     "focus-trap": "5.1.0",
     "gzip-size": "5.1.1",
     "highlight.js": "10.0.3",
-    "immer": "6.0.9",
+    "immer": "8.0.1",
     "jszip": "3.4.0",
     "lodash-es": "4.17.15",
     "node-sass": "4.14.1",
